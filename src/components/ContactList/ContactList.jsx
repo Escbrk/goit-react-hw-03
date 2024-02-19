@@ -1,20 +1,29 @@
+import css from "./ContactList.module.css";
 import { FaPhone } from "react-icons/fa6";
 import { RiContactsFill } from "react-icons/ri";
+import PropTypes from "prop-types";
 
 export default function ContactList({ contacts }) {
   return (
-    <ul>
+    <ul className={css.list}>
       {contacts.map(({ id, name, number }) => {
         return (
-          <li key={id}>
-            {/* <RiContactsFill /> */}
-            <h2>{name}</h2>
-            {/* <FaPhone /> */}
-            <span>{number}</span>
-            <button>Delete</button>
+          <li key={id} className={css.listItem}>
+            <div>
+              <RiContactsFill />
+              <span>{name}</span>
+              <br />
+              <FaPhone />
+              <span>{number}</span>
+            </div>
+            <button className={css.btn}>Delete</button>
           </li>
         );
       })}
     </ul>
   );
 }
+
+ContactList.propTypes = {
+  contacts: PropTypes.array.isRequired,
+};
