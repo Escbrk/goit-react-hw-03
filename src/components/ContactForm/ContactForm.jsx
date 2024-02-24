@@ -12,7 +12,7 @@ const validationSchema = () =>
       .required("This field is required"),
     number: Yup.string()
       .min(3, "Too Short!")
-      .max(9, "Too Long!")
+      .max(15, "Too Long!")
       .required("This field is required"),
   });
 
