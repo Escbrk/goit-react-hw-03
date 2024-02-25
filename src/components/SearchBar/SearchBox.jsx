@@ -1,6 +1,6 @@
-import css from './SearchBar.module.css'
+import css from "./SearchBox.module.css";
 
-export default function SearchBar({ value, onFilter }) {
+export default function SearchBox({ value, onFilter }) {
   return (
     <div>
       <p>Find contacts by name</p>
